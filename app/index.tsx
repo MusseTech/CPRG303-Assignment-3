@@ -1,7 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { Image, ScrollView, Text, View } from "react-native";
-import BottomNavBar from "./Components/Navbars/BottomNavBar";
 import TopBar from "./Components/Navbars/TopBar";
 import { homeStyles } from "./Styles/home.style";
 
@@ -245,8 +244,6 @@ export default function HomePage() {
           ))}
         </ScrollView>
       </ScrollView>
-
-      <BottomNavBar />
     </View>
   );
 }
