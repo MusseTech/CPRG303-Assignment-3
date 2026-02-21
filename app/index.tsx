@@ -9,20 +9,23 @@ const items = [
   {
     id: "1",
     title: "Liked Songs",
-    author: "Album • Radiohead",
-    imageUrl: "https://pbs.twimg.com/media/FxlXtGwXoAYVASV.jpg",
+    author: "Playlist • Spotify",
+    imageUrl:
+      "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84587ecba4a27774b2f6f07174",
   },
   {
     id: "2",
     title: "All Things Must Pass - 2014 Remaster",
     author: "Album • George Harrison",
-    imageUrl: "https://i.ebayimg.com/images/g/C9MAAeSw96Vpk8AR/s-l500.webp",
+    imageUrl:
+      "https://i.ebayimg.com/00/s/NTAwWDUwMA==/z/KrMAAOSwEfZghunu/$_57.JPG",
   },
   {
     id: "3",
-    title: "The bends",
-    author: "Playlist • daylist",
-    imageUrl: "https://i.ebayimg.com/images/g/AYoAAOSwr2RoW1Nc/s-l500.webp",
+    title: "The Bends",
+    author: "Album • Radiohead",
+    imageUrl:
+      "https://i.scdn.co/image/ab67616d0000b2739293c743fa542094336c5e12",
   },
   {
     id: "4",
@@ -47,10 +50,10 @@ const items = [
   },
   {
     id: "7",
-    title: "High",
+    title: "Abbey Road",
     author: "Album • The Beatles",
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0HZgc0meBEZfzXKd6S8OKFXDBjJMxfiFYSA&s",
+      "https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25",
   },
   {
     id: "8",
@@ -65,17 +68,17 @@ const items = [
 const recommendedAlbums = [
   {
     id: "r1",
-    title: "Mood",
+    title: "Meat is Murder",
     artist: "The Smiths",
     imageUrl:
-      "https://i.ytimg.com/vi/gFn7K4_7LAc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAJCjRKUP_HeHOhIA-SJK8h0mnrXA",
+      "https://i.scdn.co/image/ab67616d0000b273ac345598e7697a319cb5b460",
   },
   {
     id: "r2",
-    title: "Long Live The Queen",
+    title: "Heaven Or Las Vegas",
     artist: "Cocteau Twins",
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaG7v2Pa9Cq90z7DM2Syk5yCNFqbkQPNP1mQ&s",
+      "https://i.scdn.co/image/ab67616d0000b273fe6211303e796f3d5b7a0e02",
   },
   {
     id: "r3",
