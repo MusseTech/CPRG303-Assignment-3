@@ -1,8 +1,8 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { Image, ScrollView, Text, View } from "react-native";
-import BottomNavBar from "./Components/BottomNavBar";
-import TopBar from "./Components/TopBar";
+import BottomNavBar from "./Components/Navbars/BottomNavBar";
+import TopBar from "./Components/Navbars/TopBar";
 import { homeStyles } from "./Styles/home.style";
 
 const items = [
