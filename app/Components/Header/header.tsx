@@ -1,9 +1,16 @@
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./style";
 
 const Header = () => {
+  const router = useRouter();
+
+  const handleLibraryPress = () => {
+    router.push("/library");
+  };
+
   return (
     <View style={styles.container}>
       {/* Top Row */}
@@ -12,11 +19,13 @@ const Header = () => {
           <Ionicons name="basketball-outline" size={47} color="white" />
         </TouchableOpacity>
 
-        <Text style={styles.title}>Your Library</Text>
+        <TouchableOpacity onPress={handleLibraryPress}>
+          <Text style={styles.title}>Your Library</Text>
+        </TouchableOpacity>
 
         <View style={styles.icons}>
           <TouchableOpacity>
-            <Ionicons name="search-outline" size={26} color="white"/>
+            <Ionicons name="search-outline" size={26} color="white" />
           </TouchableOpacity>
 
           <TouchableOpacity>
@@ -28,7 +37,6 @@ const Header = () => {
       {/* Tabs */}
       <View style={styles.tabs}>
         <Text style={styles.settingtab}>
-
           <Ionicons name="options-outline" size={22} color="white" />
         </Text>
         <Text style={styles.tabText}>Playlists</Text>

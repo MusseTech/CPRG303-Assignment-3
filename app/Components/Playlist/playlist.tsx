@@ -48,6 +48,12 @@ const items = [
     author: "Album • Malcolm Todd",
     Image: "https://i.ebayimg.com/images/g/2rMAAeSw1xNolZwe/s-l400.jpg",
   },
+  {
+    id: "8",
+    title: "My Irong Lung",
+    author: "Single • Radiohead",
+    Image: "https://i.ebayimg.com/images/g/ooAAAOxyni9TGQx3/s-l640.jpg",
+  },
 ];
 
 const Playlist = () => {

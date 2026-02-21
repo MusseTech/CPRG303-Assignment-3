@@ -76,6 +76,11 @@ export default function BottomNavBar() {
 
 const styles = StyleSheet.create({
   container: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: 999,
     flexDirection: "row",
     backgroundColor: "#000",
     borderTopWidth: 0.5,

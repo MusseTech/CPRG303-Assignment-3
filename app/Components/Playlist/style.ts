@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     padding: 16,
     marginBottom: 20,
+	paddingLeft: -1,
     backgroundColor: "#121212",
   },
 
