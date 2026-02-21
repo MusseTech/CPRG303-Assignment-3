@@ -1,54 +1,49 @@
 import { StyleSheet } from "react-native";
 
 export const homeStyles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000",
-  },
-  content: {
-    flex: 1,
-    padding: 16,
-  },
-  categoriesContainer: {
-    marginTop: 8,
-    marginBottom: 16,
-  },
-  categoriesContent: {
+  // Header styles (similar to Playlist)
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: 16,
-    gap: 8,
+    paddingVertical: 12,
   },
-  categoryChip: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
+  headerTitleContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+  },
+  headerTitle: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "bold",
+    marginLeft: 8,
+  },
+  locationContainer: {
+    width: 40,
+    height: 40,
     borderRadius: 20,
     backgroundColor: "#282828",
-    marginRight: 8,
+    justifyContent: "center",
+    alignItems: "center",
   },
-  activeCategoryChip: {
-    backgroundColor: "#fff",
-  },
-  categoryChipText: {
-    color: "#fff",
-    fontSize: 14,
-    fontWeight: "500",
-  },
-  activeCategoryChipText: {
-    color: "#000",
-    fontWeight: "600",
-  },
-  // List Container (Horizontal items)
+
+  // List Container
   listContainer: {
     paddingHorizontal: 16,
     marginBottom: 24,
-    gap: 12, // Gap between rows
+    gap: 12,
   },
   row: {
     flexDirection: "row",
-    gap: 12, // Gap between items in the same row
+    gap: 12,
     justifyContent: "space-between",
   },
+
+  // List Item styles (matching your Playlist pattern)
   listItem: {
-    flex: 1, // This makes each item take equal width
+    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#181818",
@@ -56,11 +51,29 @@ export const homeStyles = StyleSheet.create({
     padding: 8,
   },
   listItemImage: {
-    width: 40,
-    height: 40,
+    width: 60,
+    height: 60,
     backgroundColor: "#333",
-    borderRadius: 4,
+    borderRadius: 4, // Square corners for albums/playlists
     marginRight: 12,
+    overflow: "hidden",
+  },
+  listItemImageRounded: {
+    width: 60,
+    height: 60,
+    backgroundColor: "#333",
+    borderRadius: 30, // Circle for artists
+    marginRight: 12,
+    overflow: "hidden",
+  },
+  image: {
+    width: "100%",
+    height: "100%",
+  },
+  imageRounded: {
+    width: "100%",
+    height: "100%",
+    borderRadius: 30,
   },
   listItemTextContainer: {
     flex: 1,
@@ -75,6 +88,7 @@ export const homeStyles = StyleSheet.create({
     color: "#b3b3b3",
     fontSize: 14,
   },
+
   // Search Bar
   searchContainer: {
     paddingHorizontal: 16,
@@ -88,41 +102,28 @@ export const homeStyles = StyleSheet.create({
     alignItems: "center",
     gap: 12,
   },
-  searchIcon: {
-    color: "#b3b3b3",
-    fontSize: 16,
-  },
   searchText: {
     color: "#b3b3b3",
     fontSize: 16,
   },
 
+  // Section Styles
   sectionTitle: {
     color: "#fff",
     fontSize: 22,
     fontWeight: "bold",
     marginBottom: 16,
     marginTop: 8,
+    paddingHorizontal: 16,
   },
   artistSection: {
     marginBottom: 24,
   },
-  artistName: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "bold",
-    marginBottom: 12,
-  },
-  albumRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
+
+  // Album Card Styles
   albumCard: {
-    width: "40%",
-    height: 200,
-    borderRadius: 8,
-    padding: 12,
-    marginBottom: 12,
+    width: 150,
+    marginLeft: 16,
   },
   albumImage: {
     width: "100%",
@@ -130,6 +131,11 @@ export const homeStyles = StyleSheet.create({
     backgroundColor: "#333",
     borderRadius: 4,
     marginBottom: 12,
+    overflow: "hidden",
+  },
+  albumImageStyle: {
+    width: "100%",
+    height: "100%",
   },
   albumTitle: {
     color: "#fff",
