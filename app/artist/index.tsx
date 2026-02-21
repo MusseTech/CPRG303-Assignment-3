@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import {
-    ScrollView,
-    StatusBar,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import AlertButton from "../../components/AlertButton";
+import AlertButton from "../components/AlertButton";
 
 const ARTIST = {
   name: "KAYTRANADA",
@@ -167,6 +167,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   backArrow: { color: "#fff", fontSize: 24, fontWeight: "300" },
+  hero: { width: "100%", height: 300, justifyContent: "flex-end" },
   heroOverlay: {
     position: "absolute",
     bottom: 0,
@@ -208,16 +209,18 @@ const styles = StyleSheet.create({
   spacer: { flex: 1 },
   shuffleBtn: { padding: 8 },
   shuffleIcon: { color: "#b3b3b3", fontSize: 22 },
+
   playBtn: {
     width: 54,
     height: 54,
     borderRadius: 27,
+    backgroundColor: "#1DB954",
     alignItems: "center",
     justifyContent: "center",
   },
   playIcon: { color: "#000", fontSize: 22, marginLeft: 3 },
 
-  tabRaw: {
+  tabRow: {
     flexDirection: "row",
     gap: 24,
     paddingHorizontal: 16,
