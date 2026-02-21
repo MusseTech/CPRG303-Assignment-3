@@ -1,9 +1,123 @@
-import { ScrollView, Text, View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import React from "react";
+import { Image, ScrollView, Text, View } from "react-native";
 import BottomNavBar from "./Components/BottomNavBar";
 import TopBar from "./Components/TopBar";
 import { homeStyles } from "./Styles/home.style";
 
+const items = [
+  {
+    id: "1",
+    title: "Liked Songs",
+    author: "Album • Radiohead",
+    imageUrl: "https://pbs.twimg.com/media/FxlXtGwXoAYVASV.jpg",
+  },
+  {
+    id: "2",
+    title: "All Things Must Pass - 2014 Remaster",
+    author: "Album • George Harrison",
+    imageUrl: "https://i.ebayimg.com/images/g/C9MAAeSw96Vpk8AR/s-l500.webp",
+  },
+  {
+    id: "3",
+    title: "The bends",
+    author: "Playlist • daylist",
+    imageUrl: "https://i.ebayimg.com/images/g/AYoAAOSwr2RoW1Nc/s-l500.webp",
+  },
+  {
+    id: "4",
+    title: "On Repeat",
+    author: "Playlist • Made for you",
+    imageUrl:
+      "https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/repeat/or/en",
+  },
+  {
+    id: "5",
+    title: "Garcie Abrams",
+    author: "Artist",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf9iUoz-fP3IWkI2v59n1KyR7WR-G3veVUDTgH-2rAloJ7dI6yKspYBiJkhqyLGCtE_GFDvbIZw4QNi9kHJgpEkOCsZQMJ2h-0hWRh30yf&s=10", // Replace with actual URL
+  },
+  {
+    id: "6",
+    title: "Taylor Swift",
+    author: "Artist",
+    imageUrl:
+      "https://globalnews.ca/wp-content/uploads/2019/05/gettyimages-1135889459.jpg?quality=65&strip=all&w=1200",
+  },
+  {
+    id: "7",
+    title: "High",
+    author: "Album • The Beatles",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0HZgc0meBEZfzXKd6S8OKFXDBjJMxfiFYSA&s",
+  },
+  {
+    id: "8",
+    title: "Atif Aslam",
+    author: "Artist",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1tCa-9TZ6ZKFh5oAYKGksB7yXuh3HxVBKDnDIc9-fG6ZaE3CjST52Fr5lTuxURNGSsgNRZ2V096lyfIRUIdIytXbTRRREEk9FghB_tDH4PQ&s=10", // Replace with actual URL
+  },
+];
+
+// Recommended albums for horizontal scroll
+const recommendedAlbums = [
+  {
+    id: "r1",
+    title: "Mood",
+    artist: "The Smiths",
+    imageUrl:
+      "https://i.ytimg.com/vi/gFn7K4_7LAc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAJCjRKUP_HeHOhIA-SJK8h0mnrXA",
+  },
+  {
+    id: "r2",
+    title: "Long Live The Queen",
+    artist: "Cocteau Twins",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaG7v2Pa9Cq90z7DM2Syk5yCNFqbkQPNP1mQ&s",
+  },
+  {
+    id: "r3",
+    title: "The Queen Is Dead",
+    artist: "The Smiths",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQQscW4w3kujaPIcaj7u3U5EJAyHRx5Nhj4w&s",
+  },
+];
+
+// Featured albums for horizontal scroll
+const featuredAlbums = [
+  {
+    id: "f1",
+    title: "opalite",
+    artist: "Taylor Swift",
+    imageUrl:
+      "https://i.scdn.co/image/ab67616d0000b273d7812467811a7da6e6a44902",
+  },
+  {
+    id: "f2",
+    title: "Senorita",
+    artist: "Camila Cabello",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQpX-Elwl6R5dqfJBzte0Rg9aWcwMy5ArxHg&s",
+  },
+  {
+    id: "f3",
+    title: "Pyaar Howa tha",
+    artist: "Aima Baig",
+    imageUrl:
+      "https://m.media-amazon.com/images/I/61vuoACRtJL._UXNaN_FMjpg_QL85_.jpg",
+  },
+];
+
 export default function HomePage() {
+  // Create rows of 2 items each
+  const rows = [];
+  for (let i = 0; i < items.length; i += 2) {
+    rows.push(items.slice(i, i + 2));
+  }
+
   return (
     <View style={{ flex: 1, backgroundColor: "#000" }}>
       {/* Top Bar Component */}
@@ -14,124 +128,90 @@ export default function HomePage() {
         contentContainerStyle={{ paddingBottom: 80 }}
         showsVerticalScrollIndicator={false}
       >
+        {/* Header with Recents and grid icon similar to Playlist */}
+        <View style={homeStyles.header}>
+          <View style={homeStyles.headerTitleContainer}>
+            <Ionicons name="arrow-down" size={15} color="white" />
+            <Ionicons name="arrow-up" size={15} color="white" />
+            <Text style={homeStyles.headerTitle}>Recents</Text>
+          </View>
+
+          <View style={homeStyles.locationContainer}>
+            <Ionicons name="grid-outline" size={18} color="white" />
+          </View>
+        </View>
+
+        {/* Map through rows to display items in 2-column grid */}
         <View style={homeStyles.listContainer}>
-          {/* Row 1 */}
-          <View style={homeStyles.row}>
-            {/* Item 1 - The Bends */}
-            <View style={homeStyles.listItem}>
-              <View style={homeStyles.listItemImage} />
-              <View style={homeStyles.listItemTextContainer}>
-                <Text style={homeStyles.listItemTitle}>The Bends</Text>
-              </View>
+          {rows.map((row, rowIndex) => (
+            <View key={`row-${rowIndex}`} style={homeStyles.row}>
+              {row.map((item) => (
+                <View key={item.id} style={homeStyles.listItem}>
+                  <View
+                    style={
+                      item.author.includes("Artist")
+                        ? homeStyles.listItemImageRounded
+                        : homeStyles.listItemImage
+                    }
+                  >
+                    {item.imageUrl && (
+                      <Image
+                        source={{ uri: item.imageUrl }}
+                        style={
+                          item.author.includes("Artist")
+                            ? homeStyles.imageRounded
+                            : homeStyles.image
+                        }
+                        resizeMode="cover"
+                      />
+                    )}
+                  </View>
+                  <View style={homeStyles.listItemTextContainer}>
+                    <Text style={homeStyles.listItemTitle} numberOfLines={1}>
+                      {item.title}
+                    </Text>
+                    <Text style={homeStyles.listItemSubtitle} numberOfLines={1}>
+                      {item.author}
+                    </Text>
+                  </View>
+                </View>
+              ))}
             </View>
-
-            {/* Item 2 - All Things Must Pass */}
-            <View style={homeStyles.listItem}>
-              <View style={homeStyles.listItemImage} />
-              <View style={homeStyles.listItemTextContainer}>
-                <Text style={homeStyles.listItemTitle}>
-                  All Things Must Pass
-                </Text>
-              </View>
-            </View>
-          </View>
-
-          {/* Row 2 */}
-          <View style={homeStyles.row}>
-            {/* Item 3 - noise rock spacegrunge */}
-            <View style={homeStyles.listItem}>
-              <View style={homeStyles.listItemImage} />
-              <View style={homeStyles.listItemTextContainer}>
-                <Text style={homeStyles.listItemTitle}>
-                  noise rock spacegrunge
-                </Text>
-              </View>
-            </View>
-
-            {/* Item 4 - On Repeat */}
-            <View style={homeStyles.listItem}>
-              <View style={homeStyles.listItemImage} />
-              <View style={homeStyles.listItemTextContainer}>
-                <Text style={homeStyles.listItemTitle}>On Repeat</Text>
-              </View>
-            </View>
-          </View>
-
-          {/* Row 3 */}
-          <View style={homeStyles.row}>
-            {/* Item 5 - Klaatu */}
-            <View style={homeStyles.listItem}>
-              <View style={homeStyles.listItemImage} />
-              <View style={homeStyles.listItemTextContainer}>
-                <Text style={homeStyles.listItemTitle}>Klaatu</Text>
-                <Text style={homeStyles.listItemSubtitle}>Artist</Text>
-              </View>
-            </View>
-
-            {/* Item 6 - Malcolm Todd */}
-            <View style={homeStyles.listItem}>
-              <View style={homeStyles.listItemImage} />
-              <View style={homeStyles.listItemTextContainer}>
-                <Text style={homeStyles.listItemTitle}>Malcolm Todd</Text>
-                <Text style={homeStyles.listItemSubtitle}>Artist</Text>
-              </View>
-            </View>
-          </View>
-
-          {/* Row 4 */}
-          <View style={homeStyles.row}>
-            {/* Item 7 - Beatles - Live In Concert */}
-            <View style={homeStyles.listItem}>
-              <View style={homeStyles.listItemImage} />
-              <View style={homeStyles.listItemTextContainer}>
-                <Text style={homeStyles.listItemTitle}>
-                  Beatles - Live In Concert
-                </Text>
-              </View>
-            </View>
-
-            {/* Item 8 - (Add your eighth item here) */}
-            <View style={homeStyles.listItem}>
-              <View style={homeStyles.listItemImage} />
-              <View style={homeStyles.listItemTextContainer}>
-                <Text style={homeStyles.listItemTitle}>Item Title</Text>
-                <Text style={homeStyles.listItemSubtitle}>Item Subtitle</Text>
-              </View>
-            </View>
-          </View>
+          ))}
         </View>
 
         {/* Search Bar - "Ask for some music" */}
         <View style={homeStyles.searchContainer}>
           <View style={homeStyles.searchBar}>
-            <Text style={homeStyles.searchIcon}>🔍</Text>
+            <Ionicons name="search-outline" size={20} color="#b3b3b3" />
             <Text style={homeStyles.searchText}>Ask for some music</Text>
           </View>
         </View>
 
         {/* Recommended for today */}
-
         <View style={homeStyles.artistSection}>
           <Text style={homeStyles.sectionTitle}>Recommended for today</Text>
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <View style={homeStyles.albumCard}>
-              <View style={homeStyles.albumImage} />
-              <Text style={homeStyles.albumTitle}>Meat Is Murder</Text>
-              <Text style={homeStyles.artistText}>The Smiths</Text>
-            </View>
-
-            <View style={homeStyles.albumCard}>
-              <View style={homeStyles.albumImage} />
-              <Text style={homeStyles.albumTitle}>Heaven or Las Vegas</Text>
-              <Text style={homeStyles.artistText}>Cocteau Twins</Text>
-            </View>
-
-            <View style={homeStyles.albumCard}>
-              <View style={homeStyles.albumImage} />
-              <Text style={homeStyles.albumTitle}>The Queen Is Dead</Text>
-              <Text style={homeStyles.artistText}>The Smiths</Text>
-            </View>
+            {recommendedAlbums.map((album) => (
+              <View key={album.id} style={homeStyles.albumCard}>
+                <View style={homeStyles.albumImage}>
+                  {album.imageUrl && (
+                    <Image
+                      source={{ uri: album.imageUrl }}
+                      style={homeStyles.albumImageStyle}
+                      resizeMode="cover"
+                    />
+                  )}
+                </View>
+                <Text style={homeStyles.albumTitle} numberOfLines={1}>
+                  {album.title}
+                </Text>
+                <Text style={homeStyles.artistText} numberOfLines={1}>
+                  {album.artist}
+                </Text>
+              </View>
+            ))}
           </ScrollView>
         </View>
 
@@ -139,24 +219,27 @@ export default function HomePage() {
         <Text style={homeStyles.sectionTitle}>
           Albums featuring songs you like
         </Text>
+
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <View style={homeStyles.albumCard}>
-            <View style={homeStyles.albumImage} />
-            <Text style={homeStyles.albumTitle}>Meat Is Murder</Text>
-            <Text style={homeStyles.artistText}>The Smiths</Text>
-          </View>
-
-          <View style={homeStyles.albumCard}>
-            <View style={homeStyles.albumImage} />
-            <Text style={homeStyles.albumTitle}>Heaven or Las Vegas</Text>
-            <Text style={homeStyles.artistText}>Cocteau Twins</Text>
-          </View>
-
-          <View style={homeStyles.albumCard}>
-            <View style={homeStyles.albumImage} />
-            <Text style={homeStyles.albumTitle}>The Queen Is Dead</Text>
-            <Text style={homeStyles.artistText}>The Smiths</Text>
-          </View>
+          {featuredAlbums.map((album) => (
+            <View key={album.id} style={homeStyles.albumCard}>
+              <View style={homeStyles.albumImage}>
+                {album.imageUrl && (
+                  <Image
+                    source={{ uri: album.imageUrl }}
+                    style={homeStyles.albumImageStyle}
+                    resizeMode="cover"
+                  />
+                )}
+              </View>
+              <Text style={homeStyles.albumTitle} numberOfLines={1}>
+                {album.title}
+              </Text>
+              <Text style={homeStyles.artistText} numberOfLines={1}>
+                {album.artist}
+              </Text>
+            </View>
+          ))}
         </ScrollView>
       </ScrollView>
 
