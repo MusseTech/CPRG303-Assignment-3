@@ -54,6 +54,12 @@ const items = [
     author: "Single • Radiohead",
     Image: "https://i.ebayimg.com/images/g/ooAAAOxyni9TGQx3/s-l640.jpg",
   },
+  {
+    id: "9",
+    title: "American Idiot",
+    author: "Ablum • Green Day",
+    Image: "https://i.ebayimg.com/images/g/ploAAOSwTaBjUzcs/s-l400.png",
+  },
 ];
 
 const Playlist = () => {
