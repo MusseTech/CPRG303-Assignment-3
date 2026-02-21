@@ -1,7 +1,6 @@
 import { ScrollView, View } from "react-native";
-
-import BottomNavBar from "./Components/BottomNavBar";
 import Header from "./Components/Header/header";
+import BottomNavBar from "./Components/Navbars/BottomNavBar";
 import Playlist from "./Components/Playlist/playlist";
 
 export default function Library() {
