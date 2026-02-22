@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Image,
   StatusBar,
   StyleSheet,
   Text,
@@ -29,10 +30,12 @@ export default function PlayerScreen() {
 
       {/* Album Art */}
       <View style={styles.albumArt}>
-        <Text style={styles.albumText}>MOVE</Text>
-        <Text style={styles.albumArtists}>
-          ADAM PORT{"\n"}STRYV{"\n"}MALACHIII
-        </Text>
+        <Image
+          source={{
+            uri: "https://i.ebayimg.com/images/g/iLQAAOSwkEtnSO7A/s-l1600.webp",
+          }}
+          style={styles.albumImage}
+        />
       </View>
 
       {/* Song Info */}
@@ -129,21 +132,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 32,
   },
-  albumText: {
-    color: "#000",
-    fontSize: 52,
-    fontWeight: "900",
-    letterSpacing: 4,
-  },
-  albumArtists: {
-    color: "#000",
-    fontSize: 13,
-    fontWeight: "700",
-    position: "absolute",
-    bottom: 16,
-    left: 16,
-    lineHeight: 18,
-  },
+  albumImage: { width: "100%", height: "100%" },
 
   songInfo: {
     flexDirection: "row",

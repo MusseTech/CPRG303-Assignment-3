@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Image,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -13,28 +14,34 @@ import AlertButton from "../components/AlertButton";
 const ARTIST = {
   name: "KAYTRANADA",
   monthlyListeners: "8.5M monthly listeners",
-  headerColor: "#2a2a2a",
+  heroImage:
+    "https://www.nme.com/wp-content/uploads/2025/08/KAYTRANADA_LiamMacRae-1392x884.jpg",
+  miniThumbImage:
+    "https://i.discogs.com/zpHdKtFCXWDykV1GQT6eV4n9qCs0ZXDSACfDKyCetuo/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0MTE1/Njg1LTE2NTk3NjQw/OTItNDA3NS5qcGVn.jpeg",
+  nowPlayingImage:
+    "https://i.ebayimg.com/images/g/K2AAAeSwfI1pHci7/s-l960.webp",
   popularTracks: [
     {
       id: "1",
       title: "Intimidated (feat. H.E.R.)",
       streams: "232,652,704",
       saved: true,
-      color: "#3a2a1a",
+      imageUrl:
+        "https://i.discogs.com/zpHdKtFCXWDykV1GQT6eV4n9qCs0ZXDSACfDKyCetuo/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0MTE1/Njg1LTE2NTk3NjQw/OTItNDA3NS5qcGVn.jpeg",
     },
     {
       id: "2",
       title: "... What You Need (feat. Charlotte D...",
       streams: "91,614,748",
       saved: false,
-      color: "#1a1a2a",
+      imageUrl: "https://i.ebayimg.com/images/g/K2AAAeSwfI1pHci7/s-l960.webp",
     },
     {
       id: "3",
       title: "YOU'RE THE ONE (feat. Syd)",
       streams: "247,041,526",
       saved: true,
-      color: "#2a1a3a",
+      imageUrl: "https://i.ebayimg.com/images/g/vrEAAOSwNfJksb0o/s-l1600.webp",
     },
   ],
 };
@@ -54,7 +61,8 @@ export default function ArtistScreen() {
 
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* Hero */}
-        <View style={[styles.hero, { backgroundColor: ARTIST.headerColor }]}>
+        <View style={styles.hero}>
+          <Image source={{ uri: ARTIST.heroImage }} style={styles.heroImage} />
           <View style={styles.heroOverlay} />
           <Text style={styles.artistName}>{ARTIST.name}</Text>
         </View>
@@ -66,8 +74,9 @@ export default function ArtistScreen() {
 
         {/* Action Row */}
         <View style={styles.actionRow}>
-          <View
-            style={[styles.miniThumb, { backgroundColor: ARTIST.headerColor }]}
+          <Image
+            source={{ uri: ARTIST.miniThumbImage }}
+            style={styles.miniThumb}
           />
           <TouchableOpacity
             style={[styles.followBtn, following && styles.followingBtn]}
@@ -86,7 +95,9 @@ export default function ArtistScreen() {
           <TouchableOpacity style={styles.shuffleBtn}>
             <Text style={styles.shuffleIcon}>⇄</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.playBtn}></TouchableOpacity>
+          <TouchableOpacity style={styles.playBtn}>
+            <Text style={styles.playIcon}>▶</Text>
+          </TouchableOpacity>
         </View>
 
         {/* Music / Clips / Merch tabs */}
@@ -112,8 +123,9 @@ export default function ArtistScreen() {
           {ARTIST.popularTracks.map((track, i) => (
             <View key={track.id} style={styles.trackRow}>
               <Text style={styles.trackNum}>{i + 1}</Text>
-              <View
-                style={[styles.trackThumb, { backgroundColor: track.color }]}
+              <Image
+                source={{ uri: track.imageUrl }}
+                style={styles.trackThumb}
               />
               <View style={styles.trackInfo}>
                 <Text style={styles.trackTitle} numberOfLines={1}>
@@ -135,7 +147,10 @@ export default function ArtistScreen() {
 
         {/* Now Playing Bar */}
         <View style={styles.nowPlayingBar}>
-          <View style={[styles.npThumb, { backgroundColor: "#1a2a4a" }]} />
+          <Image
+            source={{ uri: ARTIST.nowPlayingImage }}
+            style={styles.npThumb}
+          />
           <View style={styles.npInfo}>
             <Text style={styles.npTitle} numberOfLines={1}>
               What You Need (feat. Charlotte Day Wilson)
@@ -168,6 +183,7 @@ const styles = StyleSheet.create({
   },
   backArrow: { color: "#fff", fontSize: 24, fontWeight: "300" },
   hero: { width: "100%", height: 300, justifyContent: "flex-end" },
+  heroImage: { width: "100%", height: "100%", position: "absolute" },
   heroOverlay: {
     position: "absolute",
     bottom: 0,
@@ -274,7 +290,7 @@ const styles = StyleSheet.create({
   nowPlayingBar: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#1a3a5a",
+    backgroundColor: "#1a3a3a",
     marginHorizontal: 8,
     marginTop: 16,
     borderRadius: 8,
