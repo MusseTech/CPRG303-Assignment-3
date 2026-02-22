@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import { Image, StatusBar, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -58,36 +59,40 @@ export default function PlayerScreen() {
       {/* Conntrols */}
       <View style={styles.controls}>
         <TouchableOpacity>
-          <Text style={styles.controlIconGreen}>⇄</Text>
+          <Ionicons name="shuffle" size={26} color="#1DB954" />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.controlIcon}>⏮</Text>
+          <Ionicons name="play-skip-back" size={26} color="#fff" />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.playPauseBtn}
           onPress={() => setIsPlaying(!isPlaying)}
         >
-          <Text style={styles.playPauseIcon}>{isPlaying ? "⏸" : "▶"}</Text>
+          <Ionicons
+            name={isPlaying ? "pause" : "play"}
+            size={36}
+            color="#000"
+          />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.controlIcon}>⏭</Text>
+          <Ionicons name="play-skip-forward" size={26} color="#fff" />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.controlIcon}>⏱</Text>
+          <Ionicons name="timer-outline" size={26} color="#fff" />
         </TouchableOpacity>
       </View>
 
       {/* Bottom icons */}
       <View style={styles.bottomIcons}>
         <TouchableOpacity>
-          <Text style={styles.bottomIcon}>📺</Text>
+          <Ionicons name="tv-outline" size={22} color="#fff" />
         </TouchableOpacity>
         <View style={styles.spacer} />
         <TouchableOpacity>
-          <Text style={styles.bottomIcon}>⬆</Text>
+          <Ionicons name="share-outline" size={22} color="#fff" />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.bottomIcon}>☰</Text>
+          <Ionicons name="list-outline" size={22} color="#fff" />
         </TouchableOpacity>
       </View>
 

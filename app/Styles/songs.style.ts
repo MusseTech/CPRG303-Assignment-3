@@ -43,13 +43,13 @@ export const styles = StyleSheet.create({
   savedCircle: {
     width: 36,
     height: 36,
-    borderRadius: 18,
+    borderRadius: 30,
     borderWidth: 2,
-    borderColor: "#fff",
+    borderColor: "#1DB954",
     alignItems: "center",
     justifyContent: "center",
   },
-  savedCheckMark: { color: "#000", fontSize: 20, fontWeight: "700" },
+  savedCheckMark: { color: "#fff", fontSize: 20, fontWeight: "700" },
 
   progressContainer: { paddingHorizontal: 24, marginBottom: 16 },
   progressBarBg: {
