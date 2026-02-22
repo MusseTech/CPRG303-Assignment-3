@@ -8,15 +8,14 @@ export default function RootLayout() {
   const router = useRouter();
   const [isPlaying, setIsPlaying] = useState(true);
   const [currentSong, setCurrentSong] = useState({
-    title: "Opalite",
-    artist: "Taylor Swift",
-    imageUrl:
-      "https://i.scdn.co/image/ab67616d0000b273d7812467811a7da6e6a44902", // Replace with actual image URL
+    title: "Move",
+    artist: "Adam Port, Keinemusik, Orso",
+    imageUrl: "https://i.ebayimg.com/images/g/iLQAAOSwkEtnSO7A/s-l1600.webp",
   });
 
   const handleNowPlayingPress = () => {
     // Navigate to song screen
-    router.push("/");
+    router.push("/song");
   };
 
   return (

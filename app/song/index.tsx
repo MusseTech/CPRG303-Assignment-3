@@ -8,7 +8,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import AlertButton from "../components/AlertButton";
+import AlertButton from "../Components/AlertButton";
 
 export default function PlayerScreen() {
   const [isPlaying, setIsPlaying] = useState(true);
