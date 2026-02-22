@@ -10,6 +10,9 @@ const Header = () => {
   const handleLibraryPress = () => {
     router.push("/library");
   };
+  const handleArtistPress = () => {
+    router.push("/artist");
+  };
 
   return (
     <View style={styles.container}>
@@ -36,14 +39,23 @@ const Header = () => {
 
       {/* Tabs */}
       <View style={styles.tabs}>
-        <Text style={styles.settingtab}>
-          <Ionicons name="options-outline" size={22} color="white" />
-        </Text>
-        <Text style={styles.tabText}>Playlists</Text>
-        <Text style={styles.tabText}>Podcasts</Text>
-        <Text style={styles.tabText}>Albums</Text>
-        <Text style={styles.tabText}>Artists</Text>
-        <Text style={styles.tabText}>Events</Text>
+        <TouchableOpacity onPress={handleLibraryPress}>
+          <Text style={styles.settingtab}>
+            <Ionicons name="options-outline" size={22} color="white" />
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleLibraryPress}>
+          <Text style={styles.tabText}>Playlist</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleLibraryPress}>
+          <Text style={styles.tabText}>Podcasts</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleArtistPress}>
+          <Text style={styles.tabText}>Artist</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleLibraryPress}>
+          <Text style={styles.tabText}>Events</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

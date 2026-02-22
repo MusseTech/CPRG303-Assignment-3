@@ -1,3 +1,4 @@
+import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import {
   Image,
@@ -48,13 +49,18 @@ const ARTIST = {
 export default function ArtistScreen() {
   const [following, setFollowing] = useState(true);
   const [activeTab, setActiveTab] = useState("Music");
+  const router = useRouter();
+
+  const handleBackPress = () => {
+    router.back();
+  };
 
   return (
     <SafeAreaView style={styles.safe}>
       <StatusBar barStyle="light-content" />
 
       {/* Back button */}
-      <TouchableOpacity style={styles.backBtn}>
+      <TouchableOpacity style={styles.backBtn} onPress={handleBackPress}>
         <Text style={styles.backArrow}>‹</Text>
       </TouchableOpacity>
 

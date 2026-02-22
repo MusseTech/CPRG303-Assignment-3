@@ -53,7 +53,7 @@ const items = [
     author: "Artist",
     imageUrl:
       "https://globalnews.ca/wp-content/uploads/2019/05/gettyimages-1135889459.jpg?quality=65&strip=all&w=1200",
-    type: "artist",
+    type: " ",
     artistId: "taylor-swift",
   },
   {
@@ -62,7 +62,7 @@ const items = [
     author: "Album • The Beatles",
     imageUrl:
       "https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25",
-    type: "album",
+    type: "",
   },
   {
     id: "8",
@@ -70,7 +70,7 @@ const items = [
     author: "Artist",
     imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1tCa-9TZ6ZKFh5oAYKGksB7yXuh3HxVBKDnDIc9-fG6ZaE3CjST52Fr5lTuxURNGSsgNRZ2V096lyfIRUIdIytXbTRRREEk9FghB_tDH4PQ&s=10",
-    type: "artist",
+    type: "",
     artistId: "atif-aslam",
   },
 ];
@@ -272,18 +272,7 @@ export default function HomePage() {
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {recommendedAlbums.map((album) => (
-              <TouchableOpacity
-                key={album.id}
-                style={homeStyles.albumCard}
-                onPress={() =>
-                  handleArtistPress(
-                    album.artistId,
-                    album.artist,
-                    album.imageUrl,
-                  )
-                }
-                activeOpacity={0.7}
-              >
+              <View key={album.id} style={homeStyles.albumCard}>
                 <View style={homeStyles.albumImage}>
                   {album.imageUrl && (
                     <Image
@@ -296,16 +285,11 @@ export default function HomePage() {
                 <Text style={homeStyles.albumTitle} numberOfLines={1}>
                   {album.title}
                 </Text>
-                <TouchableOpacity
-                  onPress={() =>
-                    handleArtistPress(album.artistId, album.artist)
-                  }
-                >
-                  <Text style={homeStyles.artistText} numberOfLines={1}>
-                    {album.artist}
-                  </Text>
-                </TouchableOpacity>
-              </TouchableOpacity>
+
+                <Text style={homeStyles.artistText} numberOfLines={1}>
+                  {album.artist}
+                </Text>
+              </View>
             ))}
           </ScrollView>
         </View>
@@ -317,14 +301,7 @@ export default function HomePage() {
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {featuredAlbums.map((album) => (
-            <TouchableOpacity
-              key={album.id}
-              style={homeStyles.albumCard}
-              onPress={() =>
-                handleArtistPress(album.artistId, album.artist, album.imageUrl)
-              }
-              activeOpacity={0.7}
-            >
+            <View key={album.id} style={homeStyles.albumCard}>
               <View style={homeStyles.albumImage}>
                 {album.imageUrl && (
                   <Image
@@ -337,14 +314,11 @@ export default function HomePage() {
               <Text style={homeStyles.albumTitle} numberOfLines={1}>
                 {album.title}
               </Text>
-              <TouchableOpacity
-                onPress={() => handleArtistPress(album.artistId, album.artist)}
-              >
-                <Text style={homeStyles.artistText} numberOfLines={1}>
-                  {album.artist}
-                </Text>
-              </TouchableOpacity>
-            </TouchableOpacity>
+
+              <Text style={homeStyles.artistText} numberOfLines={1}>
+                {album.artist}
+              </Text>
+            </View>
           ))}
         </ScrollView>
       </ScrollView>
