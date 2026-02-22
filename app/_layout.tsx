@@ -9,7 +9,7 @@ export default function RootLayout() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [currentSong, setCurrentSong] = useState({
     title: "Move",
-    artist: "Adam Port, Keinemusik, Orso",
+    artist: "Adam Port, Stryv, Keinemusik, Orso, Malachii",
     imageUrl: "https://i.ebayimg.com/images/g/iLQAAOSwkEtnSO7A/s-l1600.webp",
   });
 

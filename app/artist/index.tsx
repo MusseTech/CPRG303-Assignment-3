@@ -3,13 +3,12 @@ import {
   Image,
   ScrollView,
   StatusBar,
-  StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import AlertButton from "../Components/AlertButton";
+import { artistStyles as styles } from "../Styles/artist.style";
 
 const ARTIST = {
   name: "KAYTRANADA",
@@ -144,162 +143,7 @@ export default function ArtistScreen() {
             </View>
           ))}
         </View>
-
-        {/* Now Playing Bar */}
-        <View style={styles.nowPlayingBar}>
-          <Image
-            source={{ uri: ARTIST.nowPlayingImage }}
-            style={styles.npThumb}
-          />
-          <View style={styles.npInfo}>
-            <Text style={styles.npTitle} numberOfLines={1}>
-              What You Need (feat. Charlotte Day Wilson)
-            </Text>
-          </View>
-          <Text style={styles.npPlayIcon}>▶</Text>
-        </View>
-
-        <AlertButton />
-        <View style={{ height: 20 }} />
       </ScrollView>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: "#121212" },
-
-  backBtn: {
-    position: "absolute",
-    top: 50,
-    left: 16,
-    zIndex: 10,
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: "rgba(0,0,0,0.5)",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  backArrow: { color: "#fff", fontSize: 24, fontWeight: "300" },
-  hero: { width: "100%", height: 300, justifyContent: "flex-end" },
-  heroImage: { width: "100%", height: "100%", position: "absolute" },
-  heroOverlay: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: 100,
-    backgroundColor: "rgba(0,0,0,0.45)",
-  },
-  artistName: {
-    color: "#fff",
-    fontSize: 36,
-    fontWeight: "900",
-    paddingHorizontal: 16,
-    paddingBottom: 16,
-  },
-
-  listenersRow: { paddingHorizontal: 16, paddingTop: 12 },
-  listenersText: { color: "#b3b3b3", fontSize: 13 },
-
-  actionRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    gap: 12,
-  },
-  miniThumb: { width: 44, height: 44, borderRadius: 4 },
-  followBtn: {
-    borderWidth: 1,
-    borderColor: "#b3b3b3",
-    borderRadius: 20,
-    paddingHorizontal: 20,
-    paddingVertical: 7,
-  },
-  followingBtn: { borderColor: "#fff" },
-  followText: { color: "#b3b3b3", fontSize: 13, fontWeight: "600" },
-  followingText: { color: "#fff" },
-  dots: { color: "#b3b3b3", fontSize: 12, letterSpacing: 1 },
-  spacer: { flex: 1 },
-  shuffleBtn: { padding: 8 },
-  shuffleIcon: { color: "#b3b3b3", fontSize: 22 },
-
-  playBtn: {
-    width: 54,
-    height: 54,
-    borderRadius: 27,
-    backgroundColor: "#1DB954",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  playIcon: { color: "#000", fontSize: 22, marginLeft: 3 },
-
-  tabRow: {
-    flexDirection: "row",
-    gap: 24,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    borderBottomWidth: 0.5,
-    borderBottomColor: "#333",
-  },
-  tabLabel: {
-    color: "#b3b3b3",
-    fontSize: 15,
-    fontWeight: "600",
-    paddingBottom: 8,
-  },
-  activeTabLabel: { color: "#fff" },
-  activeTabLine: {
-    height: 2,
-    backgroundColor: "#1DB954",
-    borderRadius: 1,
-    marginTop: 2,
-  },
-
-  section: { paddingHorizontal: 16, paddingTop: 16 },
-  sectionTitle: {
-    color: "#fff",
-    fontSize: 22,
-    fontWeight: "700",
-    marginBottom: 12,
-  },
-
-  trackRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 16,
-    gap: 12,
-  },
-  trackNum: { color: "#b3b3b3", fontSize: 14, width: 16, textAlign: "center" },
-  trackThumb: { width: 48, height: 48, borderRadius: 4 },
-  trackInfo: { flex: 1 },
-  trackTitle: { color: "#fff", fontSize: 15, marginBottom: 4 },
-  trackStreams: { color: "#b3b3b3", fontSize: 13 },
-  savedBadge: {
-    width: 20,
-    height: 20,
-    borderRadius: 10,
-    backgroundColor: "#1DB954",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  savedCheck: { color: "#000", fontSize: 11, fontWeight: "700" },
-
-  nowPlayingBar: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#1a3a3a",
-    marginHorizontal: 8,
-    marginTop: 16,
-    borderRadius: 8,
-    padding: 10,
-    gap: 10,
-  },
-  npThumb: { width: 40, height: 40, borderRadius: 4 },
-  npInfo: { flex: 1 },
-  npTitle: { color: "#fff", fontSize: 13 },
-  npHeadphones: { fontSize: 22 },
-  npPlayIcon: { color: "#fff", fontSize: 20 },
-});

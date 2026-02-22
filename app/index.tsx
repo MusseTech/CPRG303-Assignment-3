@@ -40,12 +40,12 @@ const items = [
   },
   {
     id: "5",
-    title: "Gracie Abrams",
+    title: "KAYTRANADA",
     author: "Artist",
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf9iUoz-fP3IWkI2v59n1KyR7WR-G3veVUDTgH-2rAloJ7dI6yKspYBiJkhqyLGCtE_GFDvbIZw4QNi9kHJgpEkOCsZQMJ2h-0hWRh30yf&s=10",
+      "https://www.nme.com/wp-content/uploads/2025/08/KAYTRANADA_LiamMacRae-1392x884.jpg",
     type: "artist",
-    artistId: "gracie-abrams",
+    artistId: "kaytranada",
   },
   {
     id: "6",
