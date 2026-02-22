@@ -272,18 +272,7 @@ export default function HomePage() {
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {recommendedAlbums.map((album) => (
-              <TouchableOpacity
-                key={album.id}
-                style={homeStyles.albumCard}
-                onPress={() =>
-                  handleArtistPress(
-                    album.artistId,
-                    album.artist,
-                    album.imageUrl,
-                  )
-                }
-                activeOpacity={0.7}
-              >
+              <View key={album.id} style={homeStyles.albumCard}>
                 <View style={homeStyles.albumImage}>
                   {album.imageUrl && (
                     <Image
@@ -296,16 +285,11 @@ export default function HomePage() {
                 <Text style={homeStyles.albumTitle} numberOfLines={1}>
                   {album.title}
                 </Text>
-                <TouchableOpacity
-                  onPress={() =>
-                    handleArtistPress(album.artistId, album.artist)
-                  }
-                >
-                  <Text style={homeStyles.artistText} numberOfLines={1}>
-                    {album.artist}
-                  </Text>
-                </TouchableOpacity>
-              </TouchableOpacity>
+
+                <Text style={homeStyles.artistText} numberOfLines={1}>
+                  {album.artist}
+                </Text>
+              </View>
             ))}
           </ScrollView>
         </View>
@@ -317,14 +301,7 @@ export default function HomePage() {
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {featuredAlbums.map((album) => (
-            <TouchableOpacity
-              key={album.id}
-              style={homeStyles.albumCard}
-              onPress={() =>
-                handleArtistPress(album.artistId, album.artist, album.imageUrl)
-              }
-              activeOpacity={0.7}
-            >
+            <View key={album.id} style={homeStyles.albumCard}>
               <View style={homeStyles.albumImage}>
                 {album.imageUrl && (
                   <Image
@@ -337,14 +314,11 @@ export default function HomePage() {
               <Text style={homeStyles.albumTitle} numberOfLines={1}>
                 {album.title}
               </Text>
-              <TouchableOpacity
-                onPress={() => handleArtistPress(album.artistId, album.artist)}
-              >
-                <Text style={homeStyles.artistText} numberOfLines={1}>
-                  {album.artist}
-                </Text>
-              </TouchableOpacity>
-            </TouchableOpacity>
+
+              <Text style={homeStyles.artistText} numberOfLines={1}>
+                {album.artist}
+              </Text>
+            </View>
           ))}
         </ScrollView>
       </ScrollView>
